@@ -1,0 +1,9 @@
+
+spring:
+  application:
+    name: clientApi
+  profiles:
+    active: development
+  cloud:
+    config:
+      uri: http://localhost:8899
