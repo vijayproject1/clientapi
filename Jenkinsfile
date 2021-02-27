@@ -21,6 +21,7 @@ pipeline {
         
         stage('Docker builddd') {
             steps {
+                echo "${WORKSPACE}"
                 sh "docker build ."
                 echo "docker version"
             }
