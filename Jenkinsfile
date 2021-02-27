@@ -19,6 +19,13 @@ pipeline {
             }
         }
         
+           stage('Docker login') {
+            steps {
+                sh "docker login -u vijayb123 -p Vijay@123"
+                echo "docker version"
+            }
+        }
+        
         stage('Docker builddd') {
             steps {
                 echo "${WORKSPACE}"
@@ -27,12 +34,7 @@ pipeline {
             }
         }
 
-        stage('Docker login') {
-            steps {
-                sh "docker login -u vijayb123 -p Vijay@123"
-                echo "docker version"
-            }
-        }
+     
 
         stage('Building our image') {
             steps {
