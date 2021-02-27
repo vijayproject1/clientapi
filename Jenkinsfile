@@ -15,18 +15,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh "./gradlew build"
-            }
-        }
+                    echo "clean"
 
-        stage('Docker login') {
-            steps {
-                sh "docker login -u vijayb123 -p Vijay@123"
-                echo "docker version"
+                    sh './gradlew clean'
+                }
             }
-        }
-
-        stage('Building our image') {
+        stage('Build') {
             steps {
                 script {
                     dockerImage = docker.build registry + "SNAP01"
