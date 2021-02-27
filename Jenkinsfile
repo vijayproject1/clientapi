@@ -1,10 +1,17 @@
 pipeline {
     agent any
     stages {
+
+        stage('permission') {
+                steps {
+                        echo "permission"
+                        sh 'chmod +x ./gradlew''
+                    }
+                }
      stage('clean') {
             steps {
                     echo "clean"
-                    sh 'chmod +x ./gradlew'
+
                     sh './gradlew clean'
                 }
             }
