@@ -18,6 +18,14 @@ pipeline {
                 sh "./gradlew build"
             }
         }
+        
+        stage('Docker builddd') {
+            steps {
+                echo "${WORKSPACE}"
+                sh "docker build ."
+                echo "docker version"
+            }
+        }
 
         stage('Docker login') {
             steps {
