@@ -5,7 +5,7 @@ pipeline {
         stage('permission') {
                 steps {
                         echo "permission"
-                        sh 'chmod +x ./gradlew''
+                        sh 'chmod +x ./gradlew'
                     }
                 }
      stage('clean') {
