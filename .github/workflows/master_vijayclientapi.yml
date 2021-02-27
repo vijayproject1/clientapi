@@ -33,4 +33,4 @@ jobs:
         app-name: 'vijayclientapi'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_1a761b8b2d54440e9b282537f7075a10 }}
-        package: '${{ github.workspace }}/target/*.jar'
+        package: '${{ github.workspace }}/build/libs/*.jar'
