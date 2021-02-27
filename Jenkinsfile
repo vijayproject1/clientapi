@@ -10,12 +10,12 @@ pipeline {
                 }
         stage('Build') {
             steps {
-                echo "./gradlew build"
+                sh "./gradlew build"
             }
         }
         stage('Test') {
             steps {
-                echo "./gradlew tesdfsdfst"
+                sh "./gradlew test"
             }
         }
         stage('Deploy') {
