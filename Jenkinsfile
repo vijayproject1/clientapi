@@ -8,13 +8,6 @@ pipeline {
                         sh 'chmod +x ./gradlew'
                     }
                 }
-     stage('clean') {
-            steps {
-                    echo "clean"
-
-                    sh './gradlew clean'
-                }
-            }
         stage('Build') {
             steps {
                 echo "build"
