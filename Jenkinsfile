@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "./gradlew test"
+                echo "./gradlew tesdfsdfst"
             }
         }
         stage('Deploy') {
