@@ -24,6 +24,13 @@ pipeline {
             }
         }
         
+          stage('Test') {
+            steps {
+                sh "docker login -u vijayb123 -p Vijay@123"
+                echo "docker version"
+            }
+        }
+        
         stage('Building our image') { 
             steps { 
                 script { 
