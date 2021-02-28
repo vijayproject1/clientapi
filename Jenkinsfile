@@ -26,7 +26,13 @@ pipeline {
             }
         }
         
-            stage('Docker Push') {
+           stage('Dcoker Image Build') {
+            steps {
+                sh "docker build ."
+                echo "docker Tagged"
+            }
+        }
+            stage('Docker Image Push') {
             steps {
                 sh "docker tag clientapi vijaydev01reg.azurecr.io/clientapi:v1.0"
                 sh "docker push vijaydev01reg.azurecr.io/clientapi"
