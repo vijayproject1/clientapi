@@ -22,40 +22,18 @@ pipeline {
            stage('Docker login') {
             steps {
                 sh "docker login -u vijayb123 -p Vijay@123"
-                echo "docker version"
+                echo "docker Tagged"
             }
         }
         
-        stage('Docker builddd') {
+            stage('Docker Push') {
             steps {
-                echo "${WORKSPACE}"
-                sh "docker build ."
-                echo "docker version"
+                sh "docker tag clientapi vijaydev01reg.azurecr.io/clientapi:v1.0"
+                sh "docker push vijaydev01reg.azurecr.io/clientapi"
+                echo "docker Pushed"
             }
         }
-
+        
      
-
-        stage('Building our image') {
-            steps {
-                script {
-                    dockerImage = docker.build registry + "SNAP01"
-                }
-            }
-        }
-        stage('Deploy our image') {
-            steps {
-                script {
-                    docker.withRegistry('', registryCredential) {
-                        dockerImage.push()
-                    }
-                }
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo "Deploy"
-            }
-        }
     }
 }
