@@ -21,7 +21,7 @@ pipeline {
         
            stage('Docker login') {
             steps {
-                sh "docker login vijaydev01reg.azurecr.io -u vijayb123 -p Vijay@123"
+                sh "docker login vijaydev01reg.azurecr.io -u vijaydev01reg -p 5gohA116a0W/Jx5zb7hVMrt=FsOfg5+R"
                  echo "${WORKSPACE}"
 
                 echo "docker Logged"
