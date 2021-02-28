@@ -36,7 +36,6 @@ pipeline {
         }
             stage('Docker Image Push') {
             steps {
-                sh "docker tag clientapi vijaydev01reg.azurecr.io/clientapi:v1.0"
                 sh "docker push vijaydev01reg.azurecr.io/clientapi"
                 echo "docker Pushed"
             }
