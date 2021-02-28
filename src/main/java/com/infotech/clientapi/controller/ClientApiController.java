@@ -25,4 +25,10 @@ public class ClientApiController {
         logger.info("sample Request Received");
         return "Hi "+ clientValue;
     }
+
+    @GetMapping("/done")
+    public String done() {
+        logger.info("done Request Received");
+        return "done";
+    }
 }
