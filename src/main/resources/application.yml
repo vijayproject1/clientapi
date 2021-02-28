@@ -1,6 +1,3 @@
-server:
-   port: 8081
-
 management:
    endpoints:
       web:
@@ -9,4 +6,4 @@ management:
 
 
 client:
-   value: newUpdatedValue
+   value: Vijay
