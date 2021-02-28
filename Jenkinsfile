@@ -22,7 +22,9 @@ pipeline {
            stage('Docker login') {
             steps {
                 sh "docker login -u vijayb123 -p Vijay@123"
-                echo "docker Tagged"
+                 echo "${WORKSPACE}"
+
+                echo "docker Logged"
             }
         }
         
