@@ -30,7 +30,7 @@ pipeline {
         
            stage('Dcoker Image Build') {
             steps {
-                sh "docker build ."
+                sh "docker build -t vijaydev01reg.azurecr.io/clientapi:v1"
                 echo "docker Tagged"
             }
         }
