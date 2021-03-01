@@ -17,8 +17,7 @@ pipeline {
             steps {
                 sh "./gradlew clean build"
             }
-        }
-                
+        }      
            stage('Dcoker Deploy') {
             steps {
                 sh "docker login vijaydev01reg.azurecr.io -u vijaydev01reg -p 5gohA116a0W/Jx5zb7hVMrt=FsOfg5+R"
