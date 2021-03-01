@@ -21,6 +21,8 @@ pipeline {
         
            stage('Docker login') {
             steps {
+                
+                echo "${env.BUILD_ID}"
                 sh "docker login vijaydev01reg.azurecr.io -u vijaydev01reg -p 5gohA116a0W/Jx5zb7hVMrt=FsOfg5+R"
                  echo "${WORKSPACE}"
 
