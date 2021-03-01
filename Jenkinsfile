@@ -21,8 +21,8 @@ pipeline {
            stage('Dcoker Deploy') {
             steps {
                 sh "docker login vijaydev01reg.azurecr.io -u vijaydev01reg -p 5gohA116a0W/Jx5zb7hVMrt=FsOfg5+R"
-                sh "docker build -t vijaydev01reg.azurecr.io/clientapi:v1.${env.BUILD_ID} . "
-                sh "docker push vijaydev01reg.azurecr.io/clientapi:v1.${env.BUILD_ID}"
+                sh "docker build -t vijaydev01reg.azurecr.io/clientapi:latest . "
+                sh "docker push vijaydev01reg.azurecr.io/clientapi:latest"
                 echo "docker Pushed successfullt"
             }
         }
