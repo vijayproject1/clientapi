@@ -21,6 +21,8 @@ pipeline {
         
            stage('Docker login') {
             steps {
+                
+                echo "${env.BUILD_ID}"
                 sh "docker login vijaydev01reg.azurecr.io -u vijaydev01reg -p 5gohA116a0W/Jx5zb7hVMrt=FsOfg5+R"
                  echo "${WORKSPACE}"
 
@@ -30,13 +32,13 @@ pipeline {
         
            stage('Dcoker Image Build') {
             steps {
-                sh "docker build -t vijaydev01reg.azurecr.io/clientapi:v1.0 . "
+                sh "docker build -t vijaydev01reg.azurecr.io/clientapi:v.1.${env.BUILD_ID} . "
                 echo "docker Tagged"
             }
         }
             stage('Docker Image Push') {
             steps {
-                sh "docker push vijaydev01reg.azurecr.io/clientapi:v1.0"
+                sh "docker push vijaydev01reg.azurecr.io/clientapi:v.1.${env.BUILD_ID}"
                 echo "docker Pushed"
             }
         }
