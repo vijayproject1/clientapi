@@ -23,7 +23,16 @@ public class ClientApiController {
     @GetMapping("/sample")
     public String getUserName() {
         logger.info("sample Request Received");
-        return "Hi "+ clientValue;
+        return getSomeValue(clientValue);
+    }
+
+    private String getSomeValue(String clientValue) {
+        return encripy(clientValue).toString();
+    }
+
+    private StringBuilder encripy(String clientValue) {
+
+        return new StringBuilder(clientValue);
     }
 
     @GetMapping("/done")

@@ -1,0 +1,33 @@
+{
+  "Order": {
+    "ID": .app.hello,
+    "addressHk": [
+      for
+      (.app.Address)
+      .
+      |
+      {
+        "H-No": .doorNo
+      }
+    ],
+    "personal": [
+      for
+      (.app.ID)
+      .
+      |
+      {
+        "Years": (if(.typeCode==
+        "age"
+        )
+        .v
+        ),
+        "name": (if(.typeCode==
+        "name"
+        )
+        .v
+
+        )
+      }
+    ]
+  }
+}
