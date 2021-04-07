@@ -1,32 +1,54 @@
 {
-  "Order": {
-    "ID": .app.hello,
-    "addressHk": [
-      for
-      (.app.Address)
-      .
-      |
-      {
-        "H-No": .doorNo
-      }
-    ],
-    "personal": [
-      for
-      (.app.ID)
-      .
-      |
-      {
-        "Years": (if(.typeCode==
-        "age"
-        )
-        .v
-        ),
-        "name": (if(.typeCode==
-        "name"
-        )
-        .v
+  "/Order/shipment/address[*]/IName": {
+    "value": ".App.item[*].itemName"
+  },
+  "/Order/shipment/address[*]/INumber": {
+    "value": ".App.item[*].itemNumber"
+  },
+  "/Order/shipment/address[*]/IPrice": {
+    "value": ".App.item[*].itemPrice"
+  },
+  "/Order/shipment/Iid": {
+    "value": ".App.itemId"
+  }
+}
 
-        )
+
+
+
+
+
+
+
+{
+  "App": {
+    "itemId": "ABC",
+    "item": [
+      {
+        "itemName": "lolName1",
+        "itemNumber": "lolNumber1",
+        "itemPrice": "lolPrice1",
+        "originItem:": [
+          {
+            "originItemName": "name1.1",
+            "originItemPrice": "price1.1"
+          },
+          {
+            "originItemName": "name12",
+            "originItemPrice": "price12"
+          }
+        ]
+      },
+      {
+        "itemName": "lolName2",
+        "itemNumber": "lolNumber2",
+        "itemPrice": "lolPrice2",
+        "originItem:": [
+          {
+            "originItemName": "name21",
+            "originItemPrice": "price21"
+          }
+        ]
       }
     ]
   }
