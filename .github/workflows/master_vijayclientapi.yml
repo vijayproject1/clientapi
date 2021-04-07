@@ -27,10 +27,10 @@ jobs:
     - name: Gradle build
       run: ./gradlew clean build
 
-    - name: Deploy to Azure Web App
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'vijayclientapi'
-        slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_1a761b8b2d54440e9b282537f7075a10 }}
-        package: '${{ github.workspace }}/build/libs/*.jar'
+#    - name: Deploy to Azure Web App
+#      uses: azure/webapps-deploy@v2
+#      with:
+#        app-name: 'vijayclientapi'
+#        slot-name: 'production'
+#        publish-profile: ${{ secrets.AzureAppService_PublishProfile_1a761b8b2d54440e9b282537f7075a10 }}
+#        package: '${{ github.workspace }}/build/libs/*.jar'
